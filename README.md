@@ -1,28 +1,33 @@
-# Identify-Customer-Segments
-# Introduction to Machine Learning Nanodegree
-Unsupervised Learning
-Identify Customer Segments
-# Overview
-In this project, we will work with real-life data provided to us by Udacity's Bertelsmann partners AZ Direct and Arvato Finance Solution. The data here concerns a company that performs mail-order sales in Germany. Their main question of interest is to identify facets of the population that are most likely to be purchasers of their products for a mailout campaign. Our job as a data scientist will be to use unsupervised learning techniques to organize the general population into clusters, then use those clusters to see which of them comprise the main user base for the company. Prior to applying the machine learning methods, we will also need to assess and clean the data in order to convert the data into a usable form
+# Unsupervised Learning
+# Project: Identify Customer Segments
+# Source
+Project 3 from Udacity's Intro to Machine Learning Nanodegree
 
-# Requirements
-This project requires Python 3.7 and the following Python libraries installed:
+# Description
+Applied unsupervised learning techniques to identify segments of the population that form the core customer base for a mail-order sales company in Germany. These segments can then be used to direct marketing campaigns towards audiences that will have the highest expected rate of returns. The data that I used has been provided by Udacity's partners at Bertelsmann Arvato Analytics and represents a real-life data science task.
+
+1. Assessed missing data and converted missing value codes to NaNs
+2. Identified, and dropped features/samples that were outliers (features missing more than 20% of data)
+3. Performed data wrangling and re-encoded categorical (via One-hot Encoding) and mixed features
+4. Used an Imputer to replace all missing values
+5. Applied feature scaling (via StandardScaler)
+6. Applied PCA to find vectors of maximal variance and reduce dimensionality
+7. Analyzed the ratio of explained variance accounted for by each principal component and decided to retain 20 principal components for clustering
+8. Re-fitted a PCA instance on the determined transformation and reviewed the cumulative variance
+9. Interpreted principal components to determine the most prominent features
+10. Applied clustering (via KMeans) to the general population and used the Elbow Method to decide how many clusters to keep, then re-fit the K-means model with the selected         number of clusters
+11. Mapped the customer data to the clusters for the general population (pre-processed, transformed features, applied clustering via PCA and KMeans from the general population,     and obtained cluster predictions for the customer demographic)
+12. Compared customer demographic to the general population to see where the strongest customer base for the company is
+13. Discovered ~200 features of people that are a suitable target audience for the company (also discovered 4 groups/clusters of people that aren't a suitable target audience       for the company)
+
+# Install
+This project requires Python 3.x and the following Python libraries installed:
 
 NumPy
-pandas
-Sklearn / scikit-learn
-Matplotlib (for data visualization)
-Seaborn (for data visualization)
-You will also need to have software installed to run and execute an iPython Notebook (Jupyter recommended)
-# Code
-Solution is provided in the Identify_Customer_Segments.ipynb notebook file.
+Pandas
+Matplotlib
+Seaborn
+Scikit-Learn
+You will also need to have software installed to run and execute an iPython Notebook
 
-# Data
-The actual data was removed due to terms and conditions of AZ Direct GmbH which prohibits of using data in any other content rather than Udacity course.
-
-#  Motivation
-The unsupervised learning branch of machine learning is key in the organization of large and complex datasets. While unsupervised learning lies in contrast to supervised learning in the fact that unsupervised learning lacks objective output classes or values, it can still be important in converting the data into a form that can be used in a supervised learning task. Dimensionality reduction techniques can help surface the main signals and associations in your data, providing supervised learning techniques a more focused set of features upon which to apply their work. Clustering techniques are useful for understanding how the data points themselves are organized. These clusters might themselves be a useful feature in a directed supervised learning task. This project will give us hands-on experience with a real-life task that makes use of these techniques, focusing on the unsupervised work that goes into understanding a dataset.
-
-# License
-We don't have privilege to showcase the input dataset.
-
+It's recommended to install Anaconda, a pre-packaged Python distribution that contains all of the necessary libraries and software for this project.
